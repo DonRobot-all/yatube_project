@@ -1,0 +1,21 @@
+{% extends 'base.html' %} 
+
+<!DOCTYPE html> 
+<html lang="ru">          
+  <head>   
+    <title> {% block title %} Проверка title в group_list {% endblock %} </title>     
+  </head>
+  <body>       
+    <header>
+      {% include 'includes/header.html' %}     
+    </header>
+    <main>
+      {% block content %}
+        Список групп быть тут должен
+      {% endblock %}
+    </main>
+    <footer>
+      {% include 'includes/footer.html' %} 
+    </footer>
+  </body>
+</html> 
