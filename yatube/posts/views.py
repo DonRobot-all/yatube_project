@@ -1,5 +1,4 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
 from .models import Post
 from .models import Group
 
@@ -7,11 +6,11 @@ from .models import Group
 def index(request):
     template = 'posts/index.html'
     posts = Post.objects.order_by('-pub_date')[:10]
-    title = 'Проверка title в index из контекста'
+    title = 'Последние обновления на сайте'
     context = {
         'posts': posts,
         'title': title,
-        'text': 'Информация на главной странице из контекста'
+        'text': 'Последние обновления на сайте'
     }
     return render(request, template, context)
 
@@ -23,5 +22,6 @@ def group_posts(request, slug):
     context = {
         'group': group,
         'posts': posts,
+        'title': 'Лев Толстой – зеркало русской революции.'
     }
     return render(request, template, context)
