@@ -22,6 +22,7 @@ def group_posts(request, slug):
     context = {
         'group': group,
         'posts': posts,
-        'title': 'Лев Толстой – зеркало русской революции.'
+        'title': f'Записи сообщества {group}',
+        'text': 'Лев Толстой – зеркало русской революции.'
     }
     return render(request, template, context)
